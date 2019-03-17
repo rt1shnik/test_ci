@@ -7,12 +7,36 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:background="?attr/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <com.example.testci.temp.TouchInterceptorLayout
+                android:id="@+id/interceptorLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <SearchView
+                    android:id="@+id/searchView"
+                    android:queryHint="@string/app_name"
+                    android:iconifiedByDefault="false"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+        </com.example.testci.temp.TouchInterceptorLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
     <Button
+            android:layout_below="@id/toolbar"
             android:layout_alignParentRight="true"
             android:id="@+id/button"
             android:text="Click to see last\nclicked item position"
             android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
     <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@id/toolbar"
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

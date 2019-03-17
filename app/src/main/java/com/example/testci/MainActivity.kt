@@ -2,11 +2,13 @@ package com.example.testci
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.testci.adapter.RadioButtonsAdapter
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,6 +27,10 @@ class MainActivity : AppCompatActivity() {
         val button = findViewById<Button>(R.id.button);
         button.setOnClickListener {
             Toast.makeText(this, adapter.lastClickedItemPosition.toString(), Toast.LENGTH_SHORT).show()
+        }
+
+        interceptorLayout.setOnClickListener {
+            Log.d("searchView", "OnClick frame")
         }
     }
 }
